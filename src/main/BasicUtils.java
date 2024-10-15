@@ -2,10 +2,17 @@ package main;
 
 public class BasicUtils {
     public static String reversed(String str) {
+        if (str == null) {
+            return null;
+        }
         return new StringBuilder(str).reverse().toString();
     }
 
+
     public static int vowelCount(String str) {
+        if (str == null) {
+            return 0;
+        }
         long count = str.toLowerCase().chars()
                 .mapToObj(i -> (char) i)
                 .filter(BasicUtils::isVowel)
@@ -15,6 +22,6 @@ public class BasicUtils {
     }
 
     public static boolean isVowel(char c) {
-        return "aeio".contains(String.valueOf(c));
+        return "aeiou".contains(String.valueOf(c));
     }
 }
